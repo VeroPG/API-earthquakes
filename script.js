@@ -1,35 +1,3 @@
-/* fetch(
-  "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson"
-)
-  .then((res) => res.json())
-  .then((terremoto) => {
-    for (let i = 0; i < terremoto.features.length; i++) {
-      const titulo = terremoto.features[i].properties.title;
-      const fechaEvento = terremoto.features[i].properties.time;
-      const fechaFormato = Date(fechaEvento);
-      const ubicacion = terremoto.features[i].geometry.coordinates;
-
-      const latitude = ubicacion[1];
-      const longitude = ubicacion[2];
-
-      const codigo = terremoto.features[i].properties.code;
-      const magnitud = terremoto.features[i].properties.mag;
-      console.log(titulo);
-      console.log(fechaFormato);
-      console.log(codigo);
-      console.log(magnitud);
-      console.log(longitude);
-      console.log(latitude);
-    }
-    /* 
-    const initialCoordinates = [latitude, longitude];
-    console.log = initialCoordinates;
- */
-/*     const map = L.map("map").setView([40, 20]);
-    L.tileLayer.provider("Stadia.OSMBright").addTo(map);
-    const marker = L.marker([latitude, longitude]).addTo(map);
-  }); */
-
 fetch(
   "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson"
 )
@@ -53,7 +21,7 @@ fetch(
     L.tileLayer(MAPBOX_API, {
       attribution: ATTRIBUTION,
       maxZoom: 18,
-      id: "mapbox/streets-v11",
+      id: "mapbox/satellite-streets-v12",
       tileSize: 512,
       zoomOffset: -1,
       accessToken: ACCESS_TOKEN,
